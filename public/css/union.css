@@ -1,0 +1,10 @@
+@font-face {
+    font-family: poppins;
+    src: url(../font/Olympic-Light.ttf);
+}
+
+*{
+    font-family: poppins;
+    font-size: 18px;
+    font-weight: bold;
+}

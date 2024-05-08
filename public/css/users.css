@@ -1,0 +1,49 @@
+@keyframes light {
+    0%{
+        filter: drop-shadow(0 0 1px red);
+    }
+    25%{
+        filter: drop-shadow(0 0 1px blue);
+    }
+    50%{
+        filter: drop-shadow(0 0 1px green);
+    }
+    75%{
+        filter: drop-shadow(0 0 1px violet);
+    }
+    100%{
+        filter: drop-shadow(0 0 1px red);
+    }
+}
+@keyframes robot {
+    0%{
+        transform:translateY(10px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(10px);
+    }
+}
+.navbar-brand{
+    animation: light infinite 5s;
+    transition: 1s ease;
+    font-weight: bolder;
+}
+.accueil{
+    display: flex;
+}
+.image{
+    transition: 1s ease;
+    animation: robot infinite 2s;
+    display: flex;
+    justify-content: center;
+}
+.pdp{
+    width: 180px;
+    float: right;
+}
+span{
+    text-indent: 150px;
+}
