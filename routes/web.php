@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GameController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +40,13 @@ Route::middleware(['auth', 'user-access:user'])->group(function(){
 //compte admin
 Route::middleware(['auth', 'user-access:admin'])->group(function(){
     Route::get('admin/accueil', [HomeController::class, 'adminHome'])->name('admin/accueil');
+
+    Route::get('admin/profile', [AdminController::class, 'profile'])->name('admin/profile');
+    Route::post('admin/traitement', [AdminController::class, 'updateAdmin']);
+
+    Route::get('admin/game', [GameController::class, 'index'])->name('admin/game');
+    Route::get('admin/game/ajout', [GameController::class, 'create'])->name('admin/game/ajout');
+    Route::post('/admin/game/store', [GameController::class, 'store'])->name('admin/game/store');
+
+    
 });

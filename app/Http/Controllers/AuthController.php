@@ -40,10 +40,10 @@ class AuthController extends Controller
         $filename = time() . '.' . $image->getClientOriginalExtension();
 
         // Déplacement de l'image téléchargée vers le dossier public/images
-        $image->move(public_path('images'), $filename);
+        $image->move(public_path('images/download'), $filename);
 
         // Stockage du chemin de l'image dans la variable $pdp
-        $pdp = 'images/' . $filename;
+        $pdp = 'images/download/' . $filename;
     }
 
     // Création d'un nouvel utilisateur avec les données du formulaire et le chemin de l'image

@@ -4,30 +4,87 @@
 
 @section('contents')
 @if(Auth::check())
- <header class='bg-white'>
-    <div class="Accueil mx-auto text-3xl p-5 shadow">
-
-    <div class="image" style="width:30%">
-    <img class="pdp" src="./images/toppng.com-robot-png-309x387.png" alt="photo-de-profil">
-    </div>
-
-    <div class="" style="width:70%">
-        <h1 class="text-3xl font-bold text-gray-900">
-            ACCUEIL
-        </h1>
-        <p>Ravie de vous voir à nouveaux, <strong>{{ ucfirst(strtolower(Auth::user()->name)) }} {{ strtoupper(Auth::user()->firstname) }}
- </strong></p>
-    <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio rem minus recusandae deserunt! Quae tempore enim ab consequuntur nam tenetur alias quo. Tenetur alias dolore impedit ratione adipisci soluta corrupti quos quisquam voluptas qui, iusto ut. Eum enim excepturi maiores et velit, atque, placeat deserunt debitis nam tenetur distinctio obcaecati?</span>
-    </div>
-    </div>
-
-    <div style="text-align:center">
-        <h3>JEUX RECENTS :</h3>
-    </div>
- </header>
 
 
-
+<div class="intro">
+            <img src="image/gta-v-screenshot-pc-11_0000799604.jpg" alt="">
+            <div class="title">
+                <h1 id="red">TELECHARGER DES JEUX GRATUIT</h1>
+                <h1>PRE-INSTALLER POUR PC</h1>
+                <p>Ravie de vous voir à nouveaux, <strong>{{ ucfirst(strtolower(Auth::user()->name)) }} {{ strtoupper(Auth::user()->firstname) }}
+                    <br>
+                <button>BROWSE</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="body">
+            <div class="input">
+                <input type="text" placeholder="Your favorite..." id="input"><br>
+                    <i class="fa fa-search" id="search"></i>
+                    <p id='erreur'>Veuillez entrer le nom de votre jeux!</p>
+            </div>
+            <div class="R_Added" id="one">
+                <h1>Recently Added</h1>
+            </div>
+            <div class="Added">
+            <img src="image/1 (1).png" alt="">
+            <img src="image/1 (2).png" alt="">
+            <img src="image/1 (3).png" alt="">
+            <img src="image/1 (4).png" alt="">
+            <img src="image/1 (5).png" alt="">
+            <img src="image/1 (6).png" alt="">
+            <img src="image/1 (7).png" alt="">
+            <img src="image/1 (8).png" alt="">
+            <img src="image/1 (9).png" alt="">
+            <img src="image/1 (10).png" alt="">
+            <img src="image/1 (11).png" alt="">
+            <img src="image/1 (12).png" alt="">
+            </div>
+            <div class="more">
+                <button id="more">MORE <i class="fa fa-angle-right"></i> </button>
+            </div>
+            <div class="R_Added">
+                <h1>Latest Update</h1>
+            </div>
+            <div class="Added">
+            <img src="image/1 (12).png" alt="">
+            <img src="image/1 (10).png" alt="">
+            <img src="image/1 (3).png" alt="">
+            <img src="image/1 (6).png" alt="">
+            <img src="image/1 (4).png" alt="">
+            <img src="image/1 (2).png" alt="">
+            <img src="image/1 (1).png" alt="">
+            <img src="image/1 (8).png" alt="">
+            <img src="image/1 (11).png" alt="">
+            <img src="image/1 (5).png" alt="">
+            <img src="image/1 (7).png" alt="">
+            <img src="image/1 (9).png" alt="">
+            </div>
+            <div class="more">
+                <button id="more">MORE <i class="fa fa-angle-right"></i> </button>
+            </div>
+            <div class="R_Added">
+                <h1>Popular Download</h1>
+            </div>
+            <div class="Added">
+            <img src="image/1 (2).png" alt="">
+            <img src="image/1 (5).png" alt="">
+            <img src="image/1 (4).png" alt="">
+            <img src="image/1 (1).png" alt="">
+            <img src="image/1 (6).png" alt="">
+            <img src="image/1 (12).png" alt="">
+            <img src="image/1 (10).png" alt="">
+            <img src="image/1 (9).png" alt="">
+            <img src="image/1 (11).png" alt="">
+            <img src="image/1 (8).png" alt="">
+            <img src="image/1 (3).png" alt="">
+            <img src="image/1 (7).png" alt="">
+            </div>
+            <div class="more">
+                <button id="more">MORE <i class="fa fa-angle-right"></i> </button>
+            </div>
+        </div>
 
 @else
 <h1>VOUS DEVRIEZ CONNECTER POUR VOIR TOUS LES CONTENUE DE CE PAGE</h1>
