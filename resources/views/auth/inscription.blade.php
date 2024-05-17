@@ -56,7 +56,7 @@
                         </div>
                         <button type="submit" class="btn">S'inscrire</button>
                         <p>En vous inscrivant, vous acceptez nos <a href="#">termes et conditions</a> ainsi que notre <a href="#">politique de confidentialité</a>.</p>
-                        <p>Vous avez déjà un compte ? <a href="connexion">Connectez-vous ici</a>.</p>
+                        <p>Vous avez déjà un compte ? <a href="/">Connectez-vous ici</a>.</p>
                     </form>
         </div>
         <div class="image-container">

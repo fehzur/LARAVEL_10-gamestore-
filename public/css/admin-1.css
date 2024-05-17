@@ -2,6 +2,20 @@
     font-family: dosis;
     src: url(../font/Dosis-VariableFont_wght.ttf)
 }
+/* admin js */
+.show{
+    transition: 1s ease-in-out;
+    transform:translateY(-10px) ;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    background-color: rgba(43, 41, 41, 0.938) !important;
+    padding: 30px 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+/* fin admin js */
+
 *{
     margin: 0;
     padding: 0;
@@ -17,6 +31,7 @@ body div.loading{
 }
 .search{
     display: flex;
+    margin: auto;
     align-items: center;
 }
 .search input{
@@ -28,7 +43,7 @@ div.navbar{
     justify-content: space-between;
     background-color: transparent;
     box-shadow: 0 0 1px black;
-    background-color: rgb(177, 177, 174);
+    background-color: rgba(43, 41, 41, 0.938);
 }
 div.navbar .logo img{
     width: 60px;
@@ -84,20 +99,85 @@ div.navbar .logo img{
 }
 form{
     text-align: center;
-    border: 1px solid black;
+    border: 0.2px dashed black;
     border-radius: 5px;
     padding: 10px 5px;
 }
 .ensemble{
-    display:flex; 
-    justify-content:space-around;
-    flex-wrap:wrap;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    text-align: center;
 }
 .foreach-admin{
-    width:350px; 
-    box-shadow: 0 0 1px black;
+    width:250px; 
     border-radius: 5px;
     padding: 5px 10px;
     margin: 25px 0;
     background-color: rgb(236, 236, 236);
+}
+
+.show_ensemble{
+    display: flex;
+    background-color: beige;
+}
+.afficher_image{
+    border-radius: 5px;
+    width: 100%;
+}
+.show_image{
+    width: 50%;
+}
+.show_title_product{
+    padding: 0 20px;
+}
+
+.show_description{
+    margin: 35px 0;
+    border: 1px dashed red;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.body{
+    margin: 5px 150px;
+}
+
+
+.edit_ensemble{
+    display:flex;
+    justify-content:center;
+    padding:20px 10px;
+    background-color: rgb(238, 234, 234);
+}
+input{
+    padding:1px 0;
+}
+.bodiest{
+    margin: 10px 50px;
+    text-align:center;
+}
+
+.nom_admin{
+    color:white;
+    animation: nom_admin 2s infinite;
+    transition: 1s ease;
+    box-shadow: 0 0 1px white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+@keyframes nom_admin {
+    0%{
+        filter:drop-shadow(0 0 5px red);
+    }
+    50%{
+        filter:drop-shadow(0 0 1px green);
+    }
+    75%{
+        filter:drop-shadow(0 0 1px orange);
+    }
+    100%{
+        filter:drop-shadow(0 0 1px red);
+    }
 }

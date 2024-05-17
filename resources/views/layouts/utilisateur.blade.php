@@ -43,7 +43,9 @@
                     </li>
                     <li><a href="">FAQ</a></li>
                     <li><a href="">RECOMMANDATION</a>
-                    </li><li class="console"><a> <i class="fa fa-angle-down" id="drop1"></i></a>
+                    </li>
+                    <li class="console"><a> 
+                    <img src="{{Auth::user()->pdp}}" alt="logo-société" style="width:40px; border-radius:50%"><i class="fa fa-angle-down" id="drop1"></i></a>
                     <div class="consolegame">
                         <ul>
                             <li>

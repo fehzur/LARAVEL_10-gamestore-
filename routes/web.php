@@ -17,15 +17,13 @@ use App\Http\Controllers\GameController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::controller(AuthController::class)->group(function(){
     Route::get('inscription', 'inscription')->name('inscription');
     Route::post('inscription', 'inscriptionSave')->name('inscription.save');
 
-    Route::get('connexion', 'connexion')->name('connexion');
+    Route::get('/', 'connexion')->name('connexion');
     Route::post('connexion', 'connexionAction')->name('connexion.action');
+    Route::get('/accueil', [GameController::class, 'index2'])->name('accueil');
 
     Route::get('deconnexion', 'deconnexion')->name('deconnexion');
 });
@@ -47,6 +45,15 @@ Route::middleware(['auth', 'user-access:admin'])->group(function(){
     Route::get('admin/game', [GameController::class, 'index'])->name('admin/game');
     Route::get('admin/game/ajout', [GameController::class, 'create'])->name('admin/game/ajout');
     Route::post('/admin/game/store', [GameController::class, 'store'])->name('admin/game/store');
+    Route::get('admin/game/afficher/{id}', [GameController::class,'show'])->name('admin/game/afficher');
+    Route::get('admin/game/modifier/{id}', [GameController::class, 'edit'])->name('admin/game/modifier');
+    Route::put('/admin/game/modifier/{id}', [GameController::class, 'update'])->name('admin/game/modifier');
+    Route::delete('/admin/game/destroy/{id}', [GameController::class, 'destroy'])->name('admin/game/destroy');
 
     
+});
+
+// failback
+Route::fallback(function() {
+    return view('404');
 });

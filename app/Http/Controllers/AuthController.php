@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
+use App\Models\Game;
 
 class AuthController extends Controller
 {
@@ -57,7 +58,7 @@ class AuthController extends Controller
     ]);
 
     // Redirection vers la page de connexion
-    return redirect()->route('connexion');
+    return redirect('/');
 }
     public function connexion(){
         return view('auth.connexion');
@@ -80,7 +81,8 @@ class AuthController extends Controller
         if(auth()->user()->type=='admin'){
             return redirect()->route('admin/accueil');
         }else{
-            return redirect()->route('accueil');
+            $games=Game::all();
+            return redirect()->route('accueil', compact('games'));
         }
 
     }
@@ -92,6 +94,6 @@ class AuthController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/connexion');
+        return redirect('/');
     }
 }

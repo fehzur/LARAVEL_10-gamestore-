@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('game');
+            $table->string('categorie');
+            $table->string('date_sortie');
+            $table->string('plateforme');
             $table->string('product_code');
             $table->text('description');
             $table->timestamps();

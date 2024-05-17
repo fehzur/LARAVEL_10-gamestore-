@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url('./css/admin-1.css')}}">
     <link rel="stylesheet" href="{{url('./fontawesome-free-5.15.3-web/css/fontawesome.css')}}">
+    <script src="{{ url('./js/app.js')}}" defer></script>
     <title>@yield('title')</title>
 </head>
 <body>
@@ -12,8 +13,7 @@
         <div class="logo">
             <a href=""><img src="{{ url('./' . (Auth::user()->pdp))}}" alt="logo-société"></a>
         </div>
-        <div class="search">
-            <input type="text" placeholder="Veuillez entrer votre jeux ..."><i style='background-color:rgb(190, 200, 180); padding:4px 0;'>🔍</i>
+        <div class="search"><strong class="nom_admin">{{ ucfirst(strtolower(Auth::user()->name)) }} {{ strtoupper(Auth::user()->firstname) }}</strong>
         </div>
         <div class="menubar">
             <ul>

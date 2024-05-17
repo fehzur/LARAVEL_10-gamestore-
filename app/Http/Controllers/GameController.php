@@ -32,6 +32,9 @@ class GameController extends Controller
         // Valider la requête pour s'assurer que tous les champs sont présents et valides
         $request->validate([
             'title' => 'required|string|max:255',
+            'categorie' => 'required|string|max:255',
+            'date_sortie' => 'required|string|max:255',
+            'plateforme' => 'required|string|max:255',
             'product_code' => 'required|string|max:50',
             'description' => 'required|string',
             'game' => 'required|file|mimes:jpg,jpeg,png,webm', // Exemple de validation pour les fichiers d'image et vidéo
@@ -57,6 +60,9 @@ class GameController extends Controller
         Game::create([
             'title' => $request->input('title'),
             'product_code' => $request->input('product_code'),
+            'categorie' => $request->input('categorie'),
+            'date_sortie' => $request->input('date_sortie'),
+            'plateforme' => $request->input('plateforme'),
             'description' => $request->input('description'),
             'game' => $game, // Utilisez le chemin de l'image dans le dossier public/images
         ]);
@@ -69,7 +75,9 @@ class GameController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $game=Game::findOrfail($id);
+
+        return view('game.afficher', compact('game'));
     }
 
     /**
@@ -77,7 +85,9 @@ class GameController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $game= game::findOrfail($id);
+
+        return view('game.modification', compact('game'));
     }
 
     /**
@@ -85,7 +95,9 @@ class GameController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $game=game::findOrfail($id);
+        $game->update($request->all());
+        return redirect()->route('admin/game')->with('succes', 'Jeux mise à jours avec succes');
     }
 
     /**
@@ -93,6 +105,8 @@ class GameController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $game= game::findOrFail($id);
+        $game->delete();
+        return redirect()->route('admin/game')->with('succes', 'Supprimation effectuer');
     }
 }
