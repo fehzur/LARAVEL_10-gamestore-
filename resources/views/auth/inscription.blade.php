@@ -1,68 +1,52 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscrivez-vous gratuitement</title>
-    <!-- Lien vers votre fichier CSS -->
-    <link rel="stylesheet" href="{{ asset('css/union.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/connexion.css') }}">
+    <link rel="stylesheet" href="{{ url('./css/inscription.css') }}">
+    <title>INSCRIVEZ-VOUS GRATUITEMENT</title>
+    <style>
+        
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="form-container">
-            <!-- Formulaire de connexion -->
-            <form action="{{route('inscription.save')}}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <div class="form-group">
-                        <h3 style="text-align: center;">INSCRIVEZ-VOUS !</h3>
-                            <label for="email">Votre Email</label>
-                            <input type="text" id="email" placeholder="exemple@gmail.com" name="email" required>
-                            @error('email')
-                                <span class="error-message">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Nom</label>
-                            <input type="text" id="name" placeholder="Votre Nom" name="name" required>
-                            @error('name')
-                                <span class="error-message">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="firstname">Prenom</label>
-                            <input type="text" id="firstname" placeholder="Votre Prenom" name="firstname" required>
-                            @error('firstname')
-                                <span class="error-message">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="image">Choisir une Photo de Profil</label>
-                            <input type="file" id="pdp" style="border: 1px solid #ccc;border-radius: 2px;width:100%" name="pdp" required>
-                            @error('email')
-                                <span class="error-message">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Mot de passe</label>
-                            <input type="password" id="password" name="password" placeholder="********" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password_confirmation">Confirmer le mot de passe</label>
-                            <input type="password" id="password_confirmation" placeholder="********" name="password_confirmation" required>
-                            @error('password_confirmation')
-                                <span class="error-message">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        <button type="submit" class="btn">S'inscrire</button>
-                        <p>En vous inscrivant, vous acceptez nos <a href="#">termes et conditions</a> ainsi que notre <a href="#">politique de confidentialité</a>.</p>
-                        <p>Vous avez déjà un compte ? <a href="/">Connectez-vous ici</a>.</p>
-                    </form>
-        </div>
-        <div class="image-container">
-            <!-- Image personnalisée -->
-            <img src="{{ asset('images/Fonds/register.jpg') }}" alt="Image personnalisée">
+    <div class="navbar">
+        <div class="navmenu">
         </div>
     </div>
+
+    <div class="body"><h1>VOULEZ VOUS NOUS SUIVRE ?</h1>
+    <p>Alors, inscris-toi gratuitement</p>
+        <p>Remplis tous les champs avec votre réelle information</p>
+        <br>
+        <br>
+        <br>
+        <form action="{{route('inscription.save')}}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <label for="pdp">Tout d'abord, telecharger une image de votre profile
+        </label>
+            <input type="file" id="pdp" name="pdp" required>
+            <input type="text" id="name" placeholder="Comment vous-appellez vous ?"  name="name" required><br>
+            <input type="text" id="firstname" placeholder="Votre Nom de Famille ?" name="firstname" required><br>
+            <input type="email" id="email" placeholder="Merci d' entrer votre e-mail"  name="email" required><br>
+            <input type="password" id="password" placeholder="Entrez votre mots de passe"  name="password" required><br>
+            <input type="password" id="password_confirmation" placeholder="Veuillez ré-entrez votre mots de passe ci-dessus" name="password_confirmation" required>
+            <br>
+            <div class="check">
+            <input type="checkbox" required id="check">
+            <p>Je suis d'accords avec la condition et les confidentialité de ce site.</p>
+            </div><br>
+            <button type="submit" class="btn">S'inscrire</button>
+        </form>
+            <p>Avez-vous déjà un compte ?</p>
+            <p>Veuillez vous connecter à votre compte en cliquant <a href="/">ici</a></p>
+    </div>
+    <footer>
+    <div class="premier">
+    <div class="deuxieme">
+    </div>
+    </div>
+    </footer>
 </body>
 </html>

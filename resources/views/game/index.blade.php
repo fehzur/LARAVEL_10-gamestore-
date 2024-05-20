@@ -2,8 +2,10 @@
 @section('title', 'Tous les jeux dispo')
 @section('contents')
 <div class="parent">
-    <h1 class="font-bold text-2xl ml-3" style="display:flex;align-items:center;">TOUS LES JEUX DISPO 
-    <input style='margin:0 25px; width:50%;height:5vh;padding:0 5%; text-align:center;' type="text" name="search" placeholder="Veuillez taper l'Id, titre, genre, etc... de jeux à rechercher"></h1>
+    <div class="d-flex align-items-center mb-3">
+        <h1 class="font-weight-bold text-2xl mb-0 mr-3">Tous les jeux disponibles</h1>
+        <input type="text" class="form-control w-50" style='margin:0 25px' name="search" placeholder="Veuillez taper l'Id, titre, genre, etc... de jeux à rechercher">
+    </div>
     <a href="{{ route('admin/game/ajout')}}" style="text-decoration:none; padding: 5px 15px; background: blue;color:white; border-radius:2px;float: right;">AJOUTEZ JEUX</a>
     <hr />
     

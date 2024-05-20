@@ -59,10 +59,10 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header">404 - Page non trouvée</div>
+                        <div class="card-header">404 - Maintenance</div>
 
                         <div class="card-body">
-                            <p>Désolé, la page que vous avez demandée n'existe pas.</p>
+                            <p>Désolé, la page que vous vouliez entrer est toujours en cours de maintenance, veuillez réessayer apres.</p>
                             <a href="{{ route('connexion') }}" class="btn btn-primary">Retourner à l'accueil</a>
                         </div>
                     </div>
