@@ -57,3 +57,4 @@ Route::middleware(['auth', 'user-access:admin'])->group(function(){
 Route::fallback(function() {
     return view('404');
 });
+Route::get('admin/game/search', [GameController::class, 'search'])->name('admin.game.search');

@@ -109,4 +109,22 @@ class GameController extends Controller
         $game->delete();
         return redirect()->route('admin/game')->with('succes', 'Supprimation effectuer');
     }
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        $games = Game::where('id', $query)
+            ->orWhere('title','LIKE', "%{$query}%")
+            ->orWhere('categorie', 'LIKE', "%{$query}%")
+            ->orWhere('plateforme', 'LIKE', "%{$query}%")
+            ->orWhere('product_code', 'LIKE', "%{$query}%")
+            ->orWhere('description', 'LIKE', "%{$query}%")
+            ->orWhere('created_at', 'LIKE', "%{$query}%")
+            ->get();
+
+            return view('game.resultat', [
+                'games' => $games,
+                'query' => $query
+            ]);
+    }
 }

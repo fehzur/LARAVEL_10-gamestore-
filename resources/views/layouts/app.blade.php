@@ -49,10 +49,10 @@
                 <div class="col-md-4">
                     <h5>Suivez-nous</h5>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><img src="{{url('./images/fonds/facebook.png')}}" alt="facebook"></a>
+                        <a href="#"><img src="{{url('./images/fonds/twitter.png')}}" alt="facebook"></a>
+                        <a href="#"><img src="{{url('./images/fonds/github.png')}}" alt="facebook"></a>
+                        <a href="#"><img src="{{url('./images/fonds/linkedin.png')}}" alt="facebook"></a>
                     </div>
                 </div>
             </div>

@@ -1,17 +1,16 @@
 @extends('layouts.app')
-@section('title', 'Tous les jeux dispo')
+@section('title', 'Resultats du recherche')
 @section('contents')
-<div class="parent">
-    <div class="d-flex align-items-center mb-3">
-        <h1 class="font-weight-bold text-2xl mb-0 mr-3">Tous les jeux disponibles</h1>
+@if(isset($games) && $games->count() > 0)
+<div class="d-flex align-items-center mb-3">
+    @if(isset($query))
+    <h1 class="font-weight-bold text-2xl mb-0 mr-3">Résultats pour "{{ $query }}"</h1>
+    @endif
         <form action="{{ route('admin.game.search') }}" style="width:50%" method="GET">
         <input type="text" class="form-control w-50" style='margin:0 25px' name="query" placeholder="Veuillez taper l'Id, titre, genre, etc... de jeux à rechercher">
         </form>
-    </div>
-    <a href="{{ route('admin/game/ajout')}}" style="text-decoration:none; padding: 5px 15px; background: blue;color:white; border-radius:2px;float: right;">AJOUTEZ JEUX</a>
-    <hr />
-    
-    <div class="ensemble">
+</div><hr />
+<div class="ensemble">
     @if($games->count() > 0)
             @foreach($games as $rs)
         <div class='foreach-admin'>
@@ -30,7 +29,7 @@
                         <form action="{{ url('admin/game/destroy', $rs->id) }}" method="POST" onsubmit="return confirm('Voulez-vous vraiment effacer cette jeux de votre liste ?')">
                             @csrf
                             @method('DELETE')
-                            <button class="delete">Delete</button>
+                            <button style="width:100%;border:none; background-color: transparent;">Delete</button>
                         </form>
             </div>
         </div>
@@ -41,5 +40,17 @@
             </tr>
             @endif
     </div>
+@else
+<div class="d-flex align-items-center mb-3">
+    @if(isset($query))
+    <h1 class="font-weight-bold text-2xl mb-0 mr-3">Résultats pour "{{ $query }}"</h1>
+    @endif
+        <form action="{{ route('admin.game.search') }}" style="width:50%" method="GET">
+        <input type="text" class="form-control w-50" style='margin:0 25px' name="query" placeholder="Veuillez taper l'Id, titre, genre, etc... de jeux à rechercher">
+        </form>
 </div>
+<div class="non_trouve">
+    <p class="paragraphe">Aucun résultat trouvé.</p>
+</div>
+@endif
 @endsection

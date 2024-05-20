@@ -123,12 +123,6 @@ div.navbar .logo img{
     justify-content: center;
     padding-top: 25vh;
 }
-form{
-    text-align: center;
-    border: 0.2px dashed black;
-    border-radius: 5px;
-    padding: 10px 5px;
-}
 .ensemble{
     display: flex;
     flex-wrap: wrap;
@@ -223,4 +217,27 @@ input{
 .footer .social-icons a {
     margin: 0 10px;
     color: white;
+}
+
+.non_trouve{
+    height: 50vh;
+}
+.paragraphe{
+    display: flex;
+    justify-content: center;
+    color: red;
+}
+
+.social-icons img{
+    width: 25px;
+}
+.social-icons img:hover{
+    transform: scale(1.1);
+    padding: 5px;
+    box-shadow: 0 0 1px white;
+}
+
+.delete{
+    width: 80%;
+    border-color: #343a401f;
 }
