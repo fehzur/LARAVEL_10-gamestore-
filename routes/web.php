@@ -23,7 +23,6 @@ Route::controller(AuthController::class)->group(function(){
 
     Route::get('/', 'connexion')->name('connexion');
     Route::post('connexion', 'connexionAction')->name('connexion.action');
-    Route::get('/accueil', [GameController::class, 'index2'])->name('accueil');
 
     Route::get('deconnexion', 'deconnexion')->name('deconnexion');
 });

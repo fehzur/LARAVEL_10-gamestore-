@@ -12,6 +12,5 @@ window.addEventListener('scroll',function(){
         navbar.classList.remove('show')
         logo.style.display='block'
         search.style.display='block'
-        
     }
 })

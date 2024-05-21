@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Game;
 
 class HomeController extends Controller
 {
@@ -11,7 +12,8 @@ class HomeController extends Controller
     }
 
     public function index(){
-        return view('accueil');
+        $games = Game::orderByDesc('created_at')->get();
+        return view('accueil', compact('games'));
     }
 
     public function adminHome(){

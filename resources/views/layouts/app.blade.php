@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url('./css/admin-1.css')}}">
+    <script src="{{ url('./js/app.js')}}" defer></script>
     <link rel="stylesheet" href="{{url('./fontawesome-free-5.15.3-web/css/fontawesome.css')}}">
     <link rel="stylesheet" href="{{ url('./bootstrap/css/bootstrap.css')}}">
-    <script src="{{ url('./js/app.js')}}" defer></script>
     <title>@yield('title')</title>
 </head>
-<body>
+<body class="bonjour">
     <div class="navbar">
         <div class="logo">
-            <a href=""><img src="{{ url('./' . (Auth::user()->pdp))}}" alt="logo-société"></a>
+            <a href="{{ route('admin/accueil')}}"><img src="{{ url('./' . (Auth::user()->pdp))}}" alt="logo-société"></a>
         </div>
         <div class="search"><strong class="nom_admin">{{ ucfirst(strtolower(Auth::user()->name)) }} {{ strtoupper(Auth::user()->firstname) }}</strong>
         </div>
@@ -40,9 +40,9 @@
                 <div class="col-md-4">
                     <h5>Liens utiles</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">Accueil</a></li>
+                        <li><a href="{{ route('admin/accueil')}}">Accueil</a></li>
                         <li><a href="#">À propos</a></li>
-                        <li><a href="#">Jeux</a></li>
+                        <li><a href="{{ url('admin/game')}}">Jeux</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
@@ -58,7 +58,7 @@
             </div>
             <div class="row mt-3">
                 <div class="col-12 text-center">
-                    <p>&copy; 2024 Nom du Jeu. Tous droits réservés.</p>
+                    <p>&copy; Fehizoro ANTSANIAINA. Tous droits réservés.</p>
                 </div>
             </div>
         </div>
