@@ -12,7 +12,7 @@ class HomeController extends Controller
     }
 
     public function index(){
-        $games = Game::orderByDesc('created_at')->get();
+        $games = Game::orderByDesc('created_at')->take(12)->get();
         return view('accueil', compact('games'));
     }
 

@@ -22,7 +22,7 @@
             {{ $rs->title }}
             </div>
             <div class="image">
-            <img src="{{url('./images/games/'. $rs->game ) }}" style="width:100%">
+            <img src="{{url('./images/games/'. $rs->game ) }}" style="width:100%; max-height:250px;">
             </div>
             <div>
                         <a href="{{ url('admin/game/afficher', $rs->id) }}" class="text-blue-800">Detail</a> |
