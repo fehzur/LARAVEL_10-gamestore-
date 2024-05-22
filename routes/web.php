@@ -33,6 +33,7 @@ Route::controller(AuthController::class)->group(function(){
 Route::middleware(['auth', 'user-access:user'])->group(function(){
     Route::get('accueil', [HomeController::class, 'index'])->name('accueil');
 });
+Route::get('games/{id}', [HomeController::class,'userShow'])->name('games');
 
 //compte admin
 Route::middleware(['auth', 'user-access:admin'])->group(function(){

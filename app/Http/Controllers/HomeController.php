@@ -19,4 +19,10 @@ class HomeController extends Controller
     public function adminHome(){
         return view('dashboard');
     }
+    public function userShow(string $id)
+    {
+        $games=Game::findOrfail($id);
+
+        return view('games', compact('games'));
+    }
 }

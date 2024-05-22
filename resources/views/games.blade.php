@@ -1,0 +1,1 @@
+<p>{{$games->title}}</p>

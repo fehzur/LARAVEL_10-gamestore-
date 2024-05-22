@@ -36,7 +36,8 @@
     </div>
 </div>
         <div class="show_description">
-            <strong>{{ $game->description }}</strong>
+            <h2 class="desc">DESCRIPTION:</h2>
+            <p class="text_desc">{{ $game->description }}</p>
         </div>
 </div>
 

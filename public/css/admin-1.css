@@ -175,7 +175,13 @@ div.navbar .logo img{
     margin: 5px 150px;
 }
 
-
+.desc{
+    color: rgb(190, 10, 10);
+}
+.text_desc{
+    text-indent: 50px;
+    font-size: larger;
+}
 .edit_ensemble{
     display:flex;
     justify-content:center;

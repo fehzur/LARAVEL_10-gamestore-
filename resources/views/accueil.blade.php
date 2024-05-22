@@ -33,7 +33,7 @@
                 <div class="card">
                     @foreach($games as $game)
                     <div class="card-image">
-                        <a href=""><img src="{{ url('./images/games/' . $game->game) }}" alt="photo de profil" class="card-img-top"></a>
+                        <a href="{{ url('games', $game->id)}}"><img src="{{ url('./images/games/' . $game->game) }}" alt="photo de profil" class="card-img-top"></a>
                         <div class="card-image-overlay">
                             <h4 class="card-title">{{ $game->title }}</h4>
                         </div>
