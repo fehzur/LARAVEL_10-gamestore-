@@ -10,11 +10,12 @@ class HomeController extends Controller
     public function __construct(){
         $this->middleware('auth');
     }
-
+    
     public function index(){
-        $games = Game::orderByDesc('created_at')->take(12)->get();
+        $games = Game::all();  // On récupère tous les jeux sans les trier
         return view('accueil', compact('games'));
     }
+    
 
     public function adminHome(){
         return view('dashboard');

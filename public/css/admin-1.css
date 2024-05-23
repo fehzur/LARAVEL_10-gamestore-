@@ -5,12 +5,12 @@
 /* admin js */
 .show{
     transition: 1s ease-in-out;
-    transform:translateY(-10px) ;
+    transform:translateY(-10px)!important;
     width: 100%;
-    position: fixed;
+    position: fixed!important;
     z-index: 100;
+    top: 0!important;
     background-color: rgba(43, 41, 41, 0.938) !important;
-    padding: 30px 0;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }

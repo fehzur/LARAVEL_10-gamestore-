@@ -24,14 +24,14 @@
                     <p id='erreur'>Veuillez entrer le nom de votre jeux!</p>
             </div>
             <div class="R_Added" id="one">
-                <h1>Recently Added</h1>
+                <h1>Nouvellement Ajouté :</h1>
             </div>
             <div class="Added">
                 @if(isset($games) && $games->count() > 0)
-    <div class="row">
+                <div class="row">
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    @foreach($games as $game)
+                    @foreach($games->sortByDesc('created_at')->take(12) as $game)
                     <div class="card-image">
                         <a href="{{ url('games', $game->id)}}"><img src="{{ url('./images/games/' . $game->game) }}" alt="photo de profil" class="card-img-top"></a>
                         <div class="card-image-overlay">
@@ -41,30 +41,36 @@
                     @endforeach
                 </div>
             </div>
-    </div>
-@else
-    <p>Aucun jeu n'a été trouvé.</p>
-@endif
+            </div>
+            @else
+            <p>Aucun jeu n'a été trouvé.</p>
+            @endif
             </div>
             <div class="more">
                 <button id="more">MORE <i class="fa fa-angle-right"></i> </button>
             </div>
             <div class="R_Added">
-                <h1>Latest Update</h1>
+                <h1>Jeux Recents :</h1>
             </div>
             <div class="Added">
-            <img src="image/1 (12).png" alt="">
-            <img src="image/1 (10).png" alt="">
-            <img src="image/1 (3).png" alt="">
-            <img src="image/1 (6).png" alt="">
-            <img src="image/1 (4).png" alt="">
-            <img src="image/1 (2).png" alt="">
-            <img src="image/1 (1).png" alt="">
-            <img src="image/1 (8).png" alt="">
-            <img src="image/1 (11).png" alt="">
-            <img src="image/1 (5).png" alt="">
-            <img src="image/1 (7).png" alt="">
-            <img src="image/1 (9).png" alt="">
+                @if(isset($games) && $games->count() > 0)
+                <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    @foreach($games->sortByDesc('date_sortie')->take(12) as $game)
+                    <div class="card-image">
+                        <a href="{{ url('games', $game->id)}}"><img src="{{ url('./images/games/' . $game->game) }}" alt="photo de profil" class="card-img-top"></a>
+                        <div class="card-image-overlay">
+                            <h4 class="card-title">{{ $game->title }}</h4>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+            </div>
+            @else
+            <p>Aucun jeu n'a été trouvé.</p>
+            @endif
             </div>
             <div class="more">
                 <button id="more">MORE <i class="fa fa-angle-right"></i> </button>
@@ -73,18 +79,24 @@
                 <h1>Popular Download</h1>
             </div>
             <div class="Added">
-            <img src="image/1 (2).png" alt="">
-            <img src="image/1 (5).png" alt="">
-            <img src="image/1 (4).png" alt="">
-            <img src="image/1 (1).png" alt="">
-            <img src="image/1 (6).png" alt="">
-            <img src="image/1 (12).png" alt="">
-            <img src="image/1 (10).png" alt="">
-            <img src="image/1 (9).png" alt="">
-            <img src="image/1 (11).png" alt="">
-            <img src="image/1 (8).png" alt="">
-            <img src="image/1 (3).png" alt="">
-            <img src="image/1 (7).png" alt="">
+                @if(isset($games) && $games->count() > 0)
+                <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    @foreach($games->shuffle()->take(12) as $game)
+                    <div class="card-image">
+                        <a href="{{ url('games', $game->id)}}"><img src="{{ url('./images/games/' . $game->game) }}" alt="photo de profil" class="card-img-top"></a>
+                        <div class="card-image-overlay">
+                            <h4 class="card-title">{{ $game->title }}</h4>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+            @else
+            <p>Aucun jeu n'a été trouvé.</p>
+            @endif
+            </div>
             </div>
             <div class="more">
                 <button id="more">MORE <i class="fa fa-angle-right"></i> </button>

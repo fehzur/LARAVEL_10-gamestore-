@@ -26,11 +26,11 @@
             </div>
             <div>
                         <a href="{{ url('admin/game/afficher', $rs->id) }}" class="text-blue-800">Detail</a> |
-                        <a href="{{ url('admin/game/modifier', $rs->id)}}" class="text-green-800 pl-2">Edit</a> |
+                        <a href="{{ url('admin/game/modifier', $rs->id)}}" class="text-green-800 pl-2">Modifier</a> |
                         <form action="{{ url('admin/game/destroy', $rs->id) }}" method="POST" onsubmit="return confirm('Voulez-vous vraiment effacer cette jeux de votre liste ?')">
                             @csrf
                             @method('DELETE')
-                            <button class="delete">Delete</button>
+                            <button class="delete">Effacer</button>
                         </form>
             </div>
         </div>
