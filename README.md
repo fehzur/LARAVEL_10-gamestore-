@@ -3,48 +3,6 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laravel10</title>
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 100px auto;
-            text-align: center;
-        }
-        .title {
-            font-size: 3em;
-            color: #333;
-        }
-        .description {
-            font-size: 1.2em;
-            color: #666;
-            margin-top: 20px;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .footer-content p {
-            margin: 0;
-        }
-        .footer-content .copyright {
-            font-size: 0.8em;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
