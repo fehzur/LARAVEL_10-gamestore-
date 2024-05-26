@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{url('./image/title.png')}}">
     <link rel="stylesheet" href="css/user.css">
     <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.css">
     <script src="js/user.js" defer></script>
@@ -19,7 +20,6 @@
             <div class="menubar">
                 <ul>
                     <li><a href="">ACCUEIL</a></li>
-                    <li><a href="">CONTACTER-L'ADMIN</a></li>
                     <li class="drop"><a>CATEGORIES <i class="fa fa-angle-down" id="drop"></i></a>
                     <div class="dropdown">
                         <ul>
@@ -41,7 +41,6 @@
                         </ul>
                     </div>
                     </li>
-                    <li><a href="">FAQ</a></li>
                     <li><a href="">RECOMMANDATION</a>
                     </li>
                     <li class="console"><a> 
@@ -69,7 +68,7 @@
       </div>
         <footer>
             <h1>Our mission :</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid porro exercitationem nobis necessitatibus, facere in suscipit ratione id voluptatum veniam autem veritatis nihil beatae soluta aperiam, tenetur incidunt voluptate. Deserunt? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur ducimus nesciunt necessitatibus eaque, quisquam saepe reiciendis vero quia placeat facere mollitia voluptatibus alias debitis deserunt, amet qui? Numquam, quis aperiam.</p>
+        <p>Merci d'avoir visité notre site de téléchargement de jeux pour PC, Xbox, PS4, et bien plus encore. Tous les jeux disponibles ici sont déjà préinstallés, vous permettant ainsi de profiter immédiatement de vos titres préférés sans attendre. Bon jeu !</p>
         </footer>
     </div>
 </body>

@@ -7,12 +7,45 @@
 
 
 <div class="intro">
-            <img src="image/gta-v-screenshot-pc-11_0000799604.jpg" alt="">
+<div class="image-scroller">
+    <div class="scroller-container">
+      <div class="scroller-item">
+      <img src="{{url('./images/scroll/image1.jpg')}}" alt="Image 1" class="carousel-image">
+      </div>
+      <div class="scroller-item">
+      <img src="{{url('./images/scroll/image2.jpg')}}" alt="Image 1" class="carousel-image">
+      </div>
+      <div class="scroller-item">
+      <img src="{{url('./images/scroll/image3.jpg')}}" alt="Image 1" class="carousel-image">
+      </div>
+      <div class="scroller-item">
+      <img src="{{url('./images/scroll/image4.jpg')}}" alt="Image 1" class="carousel-image">
+      </div>
+      <div class="scroller-item">
+      <img src="{{url('./images/scroll/image5.jpg')}}" alt="Image 1" class="carousel-image">
+      </div>
+      <div class="scroller-item">
+      <img src="{{url('./images/scroll/image6.jpg')}}" alt="Image 1" class="carousel-image">
+      </div>
+      <div class="scroller-item">
+      <img src="{{url('./images/scroll/image7.jpg')}}" alt="Image 1" class="carousel-image">
+      </div>
+      <div class="scroller-item">
+      <img src="{{url('./images/scroll/image8.jpg')}}" alt="Image 1" class="carousel-image">
+      </div>
+      <div class="scroller-item">
+      <img src="{{url('./images/scroll/image9.jpg')}}" alt="Image 1" class="carousel-image">
+      </div>
+      <div class="scroller-item">
+      <img src="{{url('./images/scroll/image10.jpg')}}" alt="Image 1" class="carousel-image">
+      </div>
+    </div>
+  </div>
             <div class="title">
                 <h1 id="red">TELECHARGER DES JEUX GRATUIT</h1>
                 <h1>PRE-INSTALLER POUR PC</h1>
                 <p>Ravie de vous voir à nouveaux, <strong>{{ ucfirst(strtolower(Auth::user()->name)) }} {{ strtoupper(Auth::user()->firstname) }}</strong>               <br>
-                <button>BROWSE</button>
+                <button>PARCOURIR</button>
             </div>
         </div>
     </header>

@@ -41,3 +41,22 @@ search.onclick=function(){
         alert("Pas de correspondance pour "+ "'"+input.value+"'")
     }
 }
+
+
+const scrollerItems = document.querySelectorAll('.scroller-item');
+
+function showNextImage() {
+  let activeIndex = 0;
+  scrollerItems.forEach((item, index) => {
+    if (item.classList.contains('active')) {
+      activeIndex = index;
+    }
+    item.classList.remove('active');
+  });
+
+  activeIndex = (activeIndex + 1) % scrollerItems.length;
+  scrollerItems[activeIndex].classList.add('active');
+}
+
+scrollerItems[0].classList.add('active');
+setInterval(showNextImage, 3000);

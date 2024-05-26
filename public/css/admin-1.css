@@ -63,16 +63,47 @@ div.menubar ul li{
     list-style-type: none;
     padding: 0 5px;
 }
-div.menubar ul li a{
-    text-decoration: none;
-    color: white;
-    filter: drop-shadow(0 0 1px black);
-}
-div.menubar ul li a:hover{
-    border-bottom:1px solid white;
-    padding-bottom: 5px;
+.menubar ul li a {
+  position: relative;
+  color: #f5f1f1;
+  text-decoration: none;
+  padding-bottom: 15px;
 }
 
+/* Appliquer le style de soulignement aux 3 premiers liens */
+.menubar ul li:nth-child(1) a,
+.menubar ul li:nth-child(2) a,
+.menubar ul li:nth-child(3) a {
+  position: relative;
+}
+
+.menubar ul li:nth-child(1) a::before,
+.menubar ul li:nth-child(2) a::before,
+.menubar ul li:nth-child(3) a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #f5efef;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.menubar ul li:nth-child(1) a:hover::before,
+.menubar ul li:nth-child(2) a:hover::before,
+.menubar ul li:nth-child(3) a:hover::before {
+  width: 100%;
+}
+
+.menubar ul li:nth-child(1) a:not(:hover)::before,
+.menubar ul li:nth-child(2) a:not(:hover)::before,
+.menubar ul li:nth-child(3) a:not(:hover)::before {
+  width: 0;
+  right: 0;
+  left: auto;
+  transition: width 0.3s ease-in-out;
+}
 @keyframes logo {
     0%{ transform: translateX(15px); }
     50%{ transform: translateX(80px); }
