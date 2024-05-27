@@ -2,57 +2,45 @@
 @section('title', 'Ajouter JEUX')
 
 @section('contents')
-<h1 class="font-bold text-2xl ml-3">Ajouter des nouveaux Jeux</h1>
-<hr />
-<div class="border-b border-gray-900/10 pb-12">
-    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-        <form action="{{ route('admin/game/store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div class="sm:col-span-4">
-                <label class="block text-sm font-medium leading-6 text-gray-900">Titre :</label>
-                <div class="mt-2">
-                    <input type="text" name="title" id="title" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Ajouter des nouveaux Jeux</h1>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form action="{{ route('admin/game/store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="mb-3">
+                    <label for="title" class="form-label">Titre :</label>
+                    <input type="text" name="title" id="title" class="form-control" required>
                 </div>
-            </div>
-
-            <div class="sm:col-span-4">
-                <label class="block text-sm font-medium leading-6 text-gray-900">Le Jeux</label>
-                <div class="mt-2">
-                    <input id="game" name="game" type="file" accept=".jpg, .jpeg, .png, .webm" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                <div class="mb-3">
+                    <label for="game" class="form-label">Le Jeu :</label>
+                    <input id="game" name="game" type="file" accept=".jpg, .jpeg, .png, .webm" class="form-control" required>
                 </div>
-            </div>
-            <div class="sm:col-span-4">
-                <label class="block text-sm font-medium leading-6 text-gray-900">Code specifique :</label>
-                <div class="mt-2">
-                    <input id="product_code" name="product_code" type="text" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                <div class="mb-3">
+                    <label for="product_code" class="form-label">Code spécifique :</label>
+                    <input id="product_code" name="product_code" type="text" class="form-control" required>
                 </div>
-            </div>
-            <div class="sm:col-span-4">
-                <label class="block text-sm font-medium leading-6 text-gray-900">Genre :</label>
-                <div class="mt-2">
-                    <input id="categorie" name="categorie" type="text" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                <div class="mb-3">
+                    <label for="categorie" class="form-label">Genre :</label>
+                    <input id="categorie" name="categorie" type="text" class="form-control" required>
                 </div>
-            </div>
-            <div class="sm:col-span-4">
-                <label class="block text-sm font-medium leading-6 text-gray-900">Ce jeux est sortie le :</label>
-                <div class="mt-2">
-                    <input id="date_sortie" name="date_sortie" type="text" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                <div class="mb-3">
+                    <label for="date_sortie" class="form-label">Ce jeu est sorti le :</label>
+                    <input id="date_sortie" name="date_sortie" type="date" class="form-control" required>
                 </div>
-            </div>
-            <div class="sm:col-span-4">
-                <label class="block text-sm font-medium leading-6 text-gray-900">Plateforme :</label>
-                <div class="mt-2">
-                    <input id="plateforme" name="plateforme" type="text" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                <div class="mb-3">
+                    <label for="plateforme" class="form-label">Plateforme :</label>
+                    <input id="plateforme" name="plateforme" type="text" class="form-control" required>
                 </div>
-            </div>
-            <div class="sm:col-span-4">
-                <label class="block text-sm font-medium leading-6 text-gray-900">Description du jeux : :</label>
-                <div class="mt-2">
-                    <textarea name="description" placeholder="Description ............" rows="3" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description du jeu :</label>
+                    <textarea id="description" name="description" rows="4" class="form-control" placeholder="Description ............" required></textarea>
                 </div>
-            </div>
-            <button type="submit" class="flex w-full justify-center mt-10 rounded-md bg-indigo px-3 py-1.5 text-sm font-semibold leading-6 shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">AJOUTER</button>
-        </form>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">AJOUTER</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 @endsection

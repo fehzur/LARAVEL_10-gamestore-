@@ -26,4 +26,22 @@ class HomeController extends Controller
 
         return view('games', compact('games'));
     }
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        $games = Game::where('id', $query)
+            ->orWhere('title','LIKE', "%{$query}%")
+            ->orWhere('categorie', 'LIKE', "%{$query}%")
+            ->orWhere('plateforme', 'LIKE', "%{$query}%")
+            ->orWhere('product_code', 'LIKE', "%{$query}%")
+            ->orWhere('description', 'LIKE', "%{$query}%")
+            ->orWhere('created_at', 'LIKE', "%{$query}%")
+            ->get();
+
+            return view('resultat', [
+                'games' => $games,
+                'query' => $query
+            ]);
+    }
 }

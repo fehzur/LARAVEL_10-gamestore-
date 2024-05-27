@@ -32,7 +32,7 @@
                 <h2>Commentaires</h2>
                 <div class="comment">
                     <textarea placeholder="Ajouter un commentaire..."></textarea>
-                    <button onclick="addComment()">Envoyer</button>
+                    <button onclick="addComment()">Commenter</button>
                 </div>
                 <div class="existing-comments">
                     <div class="comment-item">

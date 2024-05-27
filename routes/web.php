@@ -35,6 +35,8 @@ Route::middleware(['auth', 'user-access:user'])->group(function(){
 });
 Route::get('games/{id}', [HomeController::class,'userShow'])->name('games');
 
+Route::get('resultat', [HomeController::class, 'search'])->name('search');
+
 //compte admin
 Route::middleware(['auth', 'user-access:admin'])->group(function(){
     Route::get('admin/accueil', [HomeController::class, 'adminHome'])->name('admin/accueil');

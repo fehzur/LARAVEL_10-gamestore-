@@ -119,8 +119,8 @@ body {
 }
 
 .btn:hover {
-    background-color: aquamarine;
-    transform: scale(1.02);
+    background-color: rgba(14, 14, 182, 0.486);
+    transform: scale(1.01);
 }
 
 .login-link {

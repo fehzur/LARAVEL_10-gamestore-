@@ -6,55 +6,14 @@
 @if(Auth::check())
 
 
-<div class="intro">
-<div class="image-scroller">
-    <div class="scroller-container">
-      <div class="scroller-item">
-      <img src="{{url('./images/scroll/image1.jpg')}}" alt="Image 1" class="carousel-image">
-      </div>
-      <div class="scroller-item">
-      <img src="{{url('./images/scroll/image2.jpg')}}" alt="Image 1" class="carousel-image">
-      </div>
-      <div class="scroller-item">
-      <img src="{{url('./images/scroll/image3.jpg')}}" alt="Image 1" class="carousel-image">
-      </div>
-      <div class="scroller-item">
-      <img src="{{url('./images/scroll/image4.jpg')}}" alt="Image 1" class="carousel-image">
-      </div>
-      <div class="scroller-item">
-      <img src="{{url('./images/scroll/image5.jpg')}}" alt="Image 1" class="carousel-image">
-      </div>
-      <div class="scroller-item">
-      <img src="{{url('./images/scroll/image6.jpg')}}" alt="Image 1" class="carousel-image">
-      </div>
-      <div class="scroller-item">
-      <img src="{{url('./images/scroll/image7.jpg')}}" alt="Image 1" class="carousel-image">
-      </div>
-      <div class="scroller-item">
-      <img src="{{url('./images/scroll/image8.jpg')}}" alt="Image 1" class="carousel-image">
-      </div>
-      <div class="scroller-item">
-      <img src="{{url('./images/scroll/image9.jpg')}}" alt="Image 1" class="carousel-image">
-      </div>
-      <div class="scroller-item">
-      <img src="{{url('./images/scroll/image10.jpg')}}" alt="Image 1" class="carousel-image">
-      </div>
-    </div>
-  </div>
-            <div class="title">
-                <h1 id="red">TELECHARGER DES JEUX GRATUIT</h1>
-                <h1>PRE-INSTALLER POUR PC</h1>
-                <p>Ravie de vous voir à nouveaux, <strong>{{ ucfirst(strtolower(Auth::user()->name)) }} {{ strtoupper(Auth::user()->firstname) }}</strong>               <br>
-                <button>PARCOURIR</button>
-            </div>
-        </div>
-    </header>
     <main>
         <div class="body">
             <div class="input">
-                <input type="text" placeholder="Your favorite..." id="input"><br>
+                <form action="{{ url('resultat') }}" method="GET">
+                <input type="text" placeholder="Your favorite..." id="input" name="query"><br>
                     <i class="fa fa-search" id="search"></i>
-                    <p id='erreur'>Veuillez entrer le nom de votre jeux!</p>
+                    <button type="submit" style="display:none;">Rechercher</button>
+                    </form>
             </div>
             <div class="R_Added" id="one">
                 <h1>Nouvellement Ajouté :</h1>
@@ -76,11 +35,11 @@
             </div>
             </div>
             @else
-            <p>Aucun jeu n'a été trouvé.</p>
+            <p style="color: red; border:1px solid red; padding:10px 5px;">Aucun jeu n'a été trouvé. 🔭</p>
             @endif
             </div>
             <div class="more">
-                <button id="more">MORE <i class="fa fa-angle-right"></i> </button>
+                <button id="more">VOIR PLUS <i class="fa fa-angle-right"></i> </button>
             </div>
             <div class="R_Added">
                 <h1>Jeux Recents :</h1>
@@ -102,11 +61,11 @@
             </div>
             </div>
             @else
-            <p>Aucun jeu n'a été trouvé.</p>
+            <p style="color: red; border:1px solid red; padding:10px 5px;">Aucun jeu n'a été trouvé. 🔭</p>
             @endif
             </div>
             <div class="more">
-                <button id="more">MORE <i class="fa fa-angle-right"></i> </button>
+                <button id="more">VOIR PLUS <i class="fa fa-angle-right"></i> </button>
             </div>
             <div class="R_Added">
                 <h1>Popular Download</h1>
@@ -127,12 +86,11 @@
                 </div>
             </div>
             @else
-            <p>Aucun jeu n'a été trouvé.</p>
+            <p style="color: red; border:1px solid red; padding:10px 5px;">Aucun jeu n'a été trouvé. 🔭</p>
             @endif
             </div>
-            </div>
             <div class="more">
-                <button id="more">MORE <i class="fa fa-angle-right"></i> </button>
+                <button id="more">VOIR PLUS <i class="fa fa-angle-right"></i> </button>
             </div>
         </div>
 
